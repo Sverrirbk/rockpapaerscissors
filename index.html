@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RockPaperScissor</title>
+  </head>
+  <body>
+    <script>
+
+        // Start of script
+
+        function computerPlay() {
+            let result = Math.floor(Math.random() * 3);
+            console.log(result);
+            if (result == 0){
+                move = "rock";
+            }
+            else if (result == 1) {
+                move = "paper";
+            }
+            else {
+                move = "scissors";
+            }
+            console.log(move)
+            return move;
+        }
+       
+        
+        // Comments are important
+
+        function playerChoice () {
+            let move = prompt("Please choose rock, paper or scissors");
+            move = move.toLowerCase();
+            console.log(move);
+            return move;
+        }
+        
+
+        // Main function
+
+        compMove = computerPlay();
+        console.log(compMove);
+        playerMove = playerChoice();
+        console.log(playerMove);
+
+        function RockPaperScissor(player, computer) {
+            console.log(player);
+            console.log(computer);
+            if (player == "rock") {
+                if (computer =="rock") {
+                    return("Draw!");
+                }
+                else if (computer == "paper") {
+                    return("You lose! Paper beats rock");
+                }
+                else {
+                    return("You win! Rock beats scissors");
+                }
+            }
+
+            else if (player == "paper") {
+                if (computer == "rock") {
+                    return("You win! Paper beats rock");
+                }
+                else if (computer == "paper") {
+                    return("Draw!");
+                }
+                else {
+                    return("You lose! Scissors beat paper");
+                }
+            }
+
+            else if (player == "scissors") {
+                if (computer == "rock") {
+                    return("You lose! Rock beats scissors");
+                }
+                else if (computer == "paper") {
+                    return("You win! Scissors beat paper");
+                }
+                else {
+                    return("Draw!");
+                }
+            }
+            else {
+                console.log("Please write Rock, paper or scissors.")
+            }
+
+            } 
+
+    console.log(RockPaperScissor(playerMove, compMove));
+    </script>
+  </body>
+</html>
